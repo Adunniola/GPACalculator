@@ -46,6 +46,7 @@ public class GPACalculator {
                 
                 System.out.println("press any key to continue and 'N' to stop");
                 welcome = InputFromUser.nextLine();
+                
                 if (welcome.equalsIgnoreCase("n")) break;
               }
               
@@ -70,7 +71,7 @@ public class GPACalculator {
             System.out.println("|----------------------------|-----------------------|------------|---------------------|");
 
             for(int i=0; i<totalcount; i++){
-                var result = _Studentresult.getGrades(student);
+                var result = _Studentresult.getGrades(student,totalcount);
                 System.out.println("|"+ Coursecode[i] + "|" + Courseunit[i] + "|" +result.getCourseGrade() +"|" +result.getGradeUnit() );
             }
         }
@@ -78,7 +79,7 @@ public class GPACalculator {
             ex.printStackTrace();
         }
         System.out.print("Your GPA is = ");
-        System.out.printf("\"%,.2f",_Studentresult.calculateGPA(student));
+        System.out.printf("\"%,.2f",_Studentresult.calculateGPA(student,totalcount));
         
     }
 }

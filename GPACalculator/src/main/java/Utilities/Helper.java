@@ -12,13 +12,13 @@ public class Helper {
     
     
     // To Calculate GPA
-    public double calculateGPA(Student info){
+    public double calculateGPA(Student info, int count){
         //Student infoStudent = new Student();
         int qualitypoints = 0, totalGradeunits = 0;
         try{
             
-            for (int i =0; i< info.Score.length; i++){
-                var getgradeunit = getGrades(info);
+            for (int i =0; i< count; i++){
+                var getgradeunit = getGrades(info,count);
                 qualitypoints += info.CourseUnit[i] *getgradeunit.getGradeUnit();
                 totalGradeunits += getgradeunit.getGradeUnit();
             }
@@ -31,9 +31,9 @@ public class Helper {
         return totalGPA;
    
     }
-   public Student getGrades(Student info){     // Getting the Grades of the user
+   public Student getGrades(Student info, int count){     // Getting the Grades of the user
         Student infoStudent = new Student();
-        for (int i =0; i< info.Score.length; i++){
+        for (int i =0; i< count; i++){
             if(info.Score[i] >=70&&info.Score[i]<=100){
                 info.setCourseGrade("A");
                 info.setGradeUnit(5);
