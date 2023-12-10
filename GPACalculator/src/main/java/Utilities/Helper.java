@@ -17,25 +17,39 @@ public class Helper {
         return 0;
    
     }
-   public String getGrade(Student info){     // Getting the GPA of the user
-        if(info.Score >=70&&info.Score<=100){
-            info.setCourseGrade("A");
+   public Student getGrades(Student info){     // Getting the Grades of the user
+        Student infoStudent = new Student();
+        for (int i =0; i< info.Score.length; i++){
+            if(info.Score[i] >=70&&info.Score[i]<=100){
+                info.setCourseGrade("A");
+                info.setGradeUnit(5);
+            }
+            else if(info.Score[i] >=60&&info.Score[i]<=69){
+                info.setCourseGrade("B");
+                info.setGradeUnit(4);
+            }
+            else if(info.Score[i] >=50&&info.Score[i] <=59){
+                info.setCourseGrade("C");
+                info.setGradeUnit(3);
+            } 
+            else if(info.Score[i] >=45&&info.Score[i] <=49){
+                info.setCourseGrade("D");
+                info.setGradeUnit(2);
+            }
+            else if(info.Score[i] >=44&&info.Score[i] <=40){
+                info.setCourseGrade("E");
+                info.setGradeUnit(1);
+            }
+            else if(info.Score[i] >=0&&info.Score[i] <=39){
+                info.setCourseGrade("F");
+                info.setGradeUnit(0);
+            }else {
+                info.setCourseGrade("");
+            }
         }
-        else if(info.Score >=60&&info.Score<=69){
-            info.setCourseGrade("B"); 
-        }
-        else if(info.Score >=50&&info.Score<=59){
-            info.setCourseGrade("C");
-        } 
-         else if(info.Score >=45&&info.Score<=49){
-            info.setCourseGrade("D");
-        }
-         else if(info.Score >=44&&info.Score<=40){
-            info.setCourseGrade("E");
-        }
-         else if(info.Score >=0&&info.Score<=39){
-            info.setCourseGrade("F");
-        }else info.setCourseGrade("");
-        return info.getCourseGrade();
+       
+       infoStudent = info;
+       
+        return infoStudent;
    }
 }
