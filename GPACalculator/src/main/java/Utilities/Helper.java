@@ -54,7 +54,7 @@ public class Helper {
                 info.setCourseGrade("E");
                 info.setGradeUnit(1);
             }
-            else if(info.Score[i] >=0&&info.Score[i] <=39){
+            else if(info.Score[i] <=39){
                 info.setCourseGrade("F");
                 info.setGradeUnit(0);
             }else {
