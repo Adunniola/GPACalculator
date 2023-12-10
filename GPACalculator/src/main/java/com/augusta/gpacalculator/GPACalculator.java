@@ -43,6 +43,10 @@ public class GPACalculator {
           
                 System.out.println("Enter Student Courseunit");
                 Courseunit[i] = InputFromUser.nextInt();
+                
+                System.out.println("press any key to continue and 'N' to stop");
+                welcome = InputFromUser.nextLine();
+                if (welcome.equalsIgnoreCase("n")) break;
               }
               
           }
@@ -55,10 +59,6 @@ public class GPACalculator {
           student = new Student(Coursecode,Score,Courseunit);
           
           totalcount = conter;
-          System.out.println("press any key to continue and 'N' to stop");
-          welcome = InputFromUser.nextLine();
-          if (welcome.equalsIgnoreCase("n")) break;
-            
         }
         
         // get Print the  statement
