@@ -10,17 +10,20 @@ package Models;
  * @author Augusta Oseh
  */
 public class Student {
-    public String CourseCode;
-    public int CourseUnit;
+    public String[] CourseCode;
+    public int[] CourseUnit;
     public String CourseGrade;
     public int GradeUnit;
-    public int Score;
+    public int[] Score;
+
+    public Student() {
+    }
+
     
-    public Student(String CourseCode,int Score, int CourseUnit,int GradeUnit) {
+    public Student(String[] CourseCode, int[] CourseUnit, int[] Score) {
         this.CourseCode = CourseCode;
         this.CourseUnit = CourseUnit;
         this.Score = Score;
-        this.GradeUnit = GradeUnit;
     }
 
     public String getCourseGrade() {
@@ -30,6 +33,16 @@ public class Student {
     public void setCourseGrade(String CourseGrade) {
         this.CourseGrade = CourseGrade;
     }
+
+    public int getGradeUnit() {
+        return GradeUnit;
+    }
+
+    public void setGradeUnit(int GradeUnit) {
+        this.GradeUnit = GradeUnit;
+    }
+    
+    
 
     
 }
