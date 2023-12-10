@@ -57,23 +57,39 @@ public class GPACalculator {
           
           //Defing object of the student class
           student = new Student(Coursecode,Score,Courseunit);
+          if(conter > Score.length){
+              System.out.println("Content Full Kindly proceed to see Results");
+              break;
+          }
         }
           // get Print the  statement
-        try{
-            System.out.println("|------------------------|--------------------|------------|---------------------|");
-            System.out.println("|\t COURSE & CODE   | COURSE UNIT  \t | GRADE \t|GRADE-UNIT \t     |");
-            System.out.println("|------------------------|--------------------|------------|---------------------|");       
-            for(int i=0; i<totalcount; i++){
-                System.out.println("|\t   "+ Coursecode[i] + "      \t  |   " + Courseunit[i] + "\t\t       |    " +_Studentresult.getGrades(Score[i]) +"\t\t|   " + _Studentresult.getGradeUnit(Score[i] ));
-            } 
-        }
-        catch(ArrayIndexOutOfBoundsException ex){
-            ex.printStackTrace();
-        }
-        System.out.println("");
-        System.out.print("Your GPA is = ");
-        System.out.printf("%,.2f",_Studentresult.calculateGPA(Score, Courseunit,totalcount));
-        System.out.println("");
-        
+        if(totalcount != 0){
+            try{
+                System.out.println("|------------------------|--------------------|------------|---------------------|");
+                System.out.println("|\t COURSE & CODE   | COURSE UNIT  \t | GRADE \t|GRADE-UNIT \t     |");
+                System.out.println("|------------------------|--------------------|------------|---------------------|");       
+            
+                for(int i=0; i<totalcount; i++){
+                    System.out.println("|\t   "+ Coursecode[i] + "      \t|" + Courseunit[i] + "\t\t|" +_Studentresult.getGrades(Score[i]) +"\t\t|" + _Studentresult.getGradeUnit(Score[i] ));
+                } 
+            }   
+            catch(ArrayIndexOutOfBoundsException ex){
+                ex.printStackTrace();
+            }
+            System.out.println("");
+            System.out.print("Your GPA is = ");
+            System.out.printf("%,.2f",_Studentresult.calculateGPA(Score, Courseunit,totalcount));
+            System.out.println("");
+            System.out.println("|-----------------------------------------------------------------------------");
+            System.out.println("Good Bye from US");
+
+        }else{
+            System.out.println("");
+            System.out.println("Not Result Found");
+            System.out.println("|-----------------------------------------------------------------------------");
+            System.out.println("Your GPA is = null");
+            System.out.println("Good Bye from US");
+
+        } 
     }
 }
