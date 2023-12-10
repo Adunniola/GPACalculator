@@ -20,7 +20,7 @@ public class Helper {
             for (int i =0; i< count; i++){
                 var getgradeunit = getGradeUnit(Score[i]);
                 qualitypoints += CourseUnit[i] * getgradeunit;
-                totalGradeunits += CourseUnit[i];
+                totalGradeunits += getgradeunit;
             }
             return qualitypoints/ totalGradeunits;
         }catch(Exception ex){
