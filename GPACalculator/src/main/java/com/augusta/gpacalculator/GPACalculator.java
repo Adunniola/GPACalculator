@@ -16,7 +16,10 @@ public class GPACalculator {
 
     public static void main(String[] args) {
         // temp variable
-        Student student = null;String[] Coursecode= null;int[] Score =null;int[] Courseunit =null;
+        Student student = null;
+        String[] Coursecode= new String[20] ;
+        int[] Score =new int[20];
+        int[] Courseunit = new int[20];
         int conter =0, totalcount =0;
         Helper _Studentresult = new Helper();
         //Defining object of the scanner class
