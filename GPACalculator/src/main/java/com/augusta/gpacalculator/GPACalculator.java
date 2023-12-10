@@ -48,6 +48,7 @@ public class GPACalculator {
           }
           catch(Exception ex){
               System.out.println("Invalid Parameter");
+              ex.printStackTrace();
           }
           
           //Defing object of the student class
@@ -69,15 +70,15 @@ public class GPACalculator {
             System.out.println("|----------------------------|-----------------------|------------|---------------------|");
 
             for(int i=0; i<totalcount; i++){
-                System.out.println("|"+ Coursecode[i] + "|" + Courseunit[i] );
-                //var result = _Studentresult.getGrades(student);
-                
+                var result = _Studentresult.getGrades(student);
+                System.out.println("|"+ Coursecode[i] + "|" + Courseunit[i] + "|" +result.getCourseGrade() +"|" +result.getGradeUnit() );
             }
         }
         catch(ArrayIndexOutOfBoundsException ex){
             ex.printStackTrace();
         }
-       
+        System.out.print("Your GPA is = ");
+        System.out.printf("\"%,.2f",_Studentresult.calculateGPA(student));
         
     }
 }

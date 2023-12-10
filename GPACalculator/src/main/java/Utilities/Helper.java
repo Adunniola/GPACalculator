@@ -12,9 +12,23 @@ public class Helper {
     
     
     // To Calculate GPA
-    public float calculateGPA(Student info){
-    
-        return 0;
+    public double calculateGPA(Student info){
+        //Student infoStudent = new Student();
+        int qualitypoints = 0, totalGradeunits = 0;
+        try{
+            
+            for (int i =0; i< info.Score.length; i++){
+                var getgradeunit = getGrades(info);
+                qualitypoints += info.CourseUnit[i] *getgradeunit.getGradeUnit();
+                totalGradeunits += getgradeunit.getGradeUnit();
+            }
+        }catch(Exception ex){
+            System.out.println("Something went wrong");
+        }
+        
+        double totalGPA = qualitypoints/ totalGradeunits;        
+        
+        return totalGPA;
    
     }
    public Student getGrades(Student info){     // Getting the Grades of the user
